@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { db } from '@/lib/db';
 import PropertyCard from '@/components/property/PropertyCard';
 import PropertyFilterBar from '@/components/property/PropertyFilterBar';
@@ -62,7 +63,9 @@ export default async function HomePage() {
 
           {/* Integrated Search Filter Bar */}
           <div className="w-full max-w-4xl text-left">
-            <PropertyFilterBar />
+            <Suspense fallback={<div className="h-64 rounded-2xl bg-white/90 animate-pulse" aria-label="Cargando filtros" />}>
+              <PropertyFilterBar />
+            </Suspense>
           </div>
         </div>
       </section>
