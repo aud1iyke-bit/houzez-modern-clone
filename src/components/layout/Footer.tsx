@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Building2, Phone, Mail, MapPin, ArrowRight, Heart } from 'lucide-react';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
   return (
@@ -128,20 +129,7 @@ export default function Footer() {
             <p className="text-sm text-gray-400 mb-4">
               Suscríbete para recibir alertas privadas de propiedades antes de su publicación general.
             </p>
-            <form onSubmit={(e) => { e.preventDefault(); alert('¡Gracias por suscribirte!'); }} className="space-y-2">
-              <input 
-                type="email" 
-                placeholder="Tu correo electrónico" 
-                required
-                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
-              />
-              <button 
-                type="submit"
-                className="w-full bg-[#0054a6] hover:bg-[#004080] text-white text-sm font-semibold py-2.5 rounded-lg transition"
-              >
-                Suscribirme
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
         </div>
 
